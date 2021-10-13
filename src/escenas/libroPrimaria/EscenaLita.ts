@@ -21,7 +21,7 @@ class EscenaLita extends EscenaDesdeMapa {
 		return Casilla.imagenesPara('lita').concat(Obstaculo.imagenesPara('lita'));
 	}			//TODO: Usar flatMap (lodash)
 
-	constructor(especificacion: Spec, opciones?: opcionesMapaAleatorio, posFinal?: [number, number]) {
+	constructor(especificacion: string | Array<string>, opciones?: opcionesMapaAleatorio, posFinal?: [number, number]) {
 		super();
 		this.initDesdeUnaOVariasDescripciones(especificacion, opciones);
 

@@ -38,43 +38,29 @@
     "generate-random-grammar": "nearleyc ./src/gramaticaAleatoria.ne -o ./dist/gramaticaAleatoria.js",
     "watch": "grunt watch",
     "build": "make build",
-    "test": "jest --colors --testPathIgnorePatterns dist --watch",
-    "test:ci": "jest",
     "release:patch": "npm version patch",
     "release:minor": "npm version minor",
     "release:major": "npm version major",
     "publish": "npm run build && ./node_modules/.bin/release --publish --show-url"
   },
   "dependencies": {
-    "pilasweb": "^0.5.0"
+    "pilasweb": "^0.4.9"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "canvas": "^2.8.0",
-    "grunt": "^1.4.1",
-    "grunt-cli": "^1.4.3",
+    "grunt": "^1.2.1",
+    "grunt-cli": "^1.3.2",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-run": "^0.8.1",
     "grunt-typescript": "^0.8.0",
-    "jest": "^27.1.1",
     "load-grunt-tasks": "^5.1.0",
     "nearley": "^2.19.5",
     "reflect-metadata": "^0.1.13",
     "release": "^6.3.0",
-    "ts-jest": "^27.0.5",
     "typescript": "^3.9.7"
   },
   "files": [
     "dist/**/*",
     "LICENCE"
-  ],
-  "jest": {
-    "verbose": true,
-    "preset": "ts-jest",
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": [
-      "./tests/init.js"
-    ]
-  }
+  ]
 }

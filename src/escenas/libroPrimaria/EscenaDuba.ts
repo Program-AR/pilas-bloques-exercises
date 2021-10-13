@@ -9,19 +9,19 @@ class EscenaDuba extends EscenaDesdeMapa {
 	xFinal: number;
 	yFinal: number;
 
-	static clasesDeActoresInvolucrados(): typeof ActorAnimado[] {
+	static clasesDeActoresInvolucrados() :typeof ActorAnimado[] {
 		return [Duba, Churrasco, FlechaEscenarioAleatorio];
 	};
 
-	static pathFondo(): string {
+	static pathFondo() : string {
 		return 'fondo.duba.png';
 	}
 
-	static imagenesAdicionales(): string[] {
+	static imagenesAdicionales() : string[]{
 		return Casilla.imagenesPara('duba').concat(Obstaculo.imagenesPara('duba'));
 	}			//TODO: Usar flatMap (lodash)
 
-	constructor(especificacion: Spec, opciones?: opcionesMapaAleatorio, posFinal?: [number, number]) {
+	constructor(especificacion: string | Array<string>, opciones?: opcionesMapaAleatorio, posFinal? : [number, number]) {
 		super();
 		this.initDesdeUnaOVariasDescripciones(especificacion, opciones);
 
@@ -45,8 +45,8 @@ class EscenaDuba extends EscenaDesdeMapa {
 		});
 	}
 
-	mapearIdentificadorAActor(id, nroFila, nroColumna): ActorAnimado {
-		switch (id) {
+	mapearIdentificadorAActor(id, nroFila, nroColumna) : ActorAnimado {
+		switch(id) {
 			case 'A': return this.automata;
 			case 'O': return this.obtenerObstaculo(nroFila, nroColumna);
 			case 'P': return new Churrasco();
